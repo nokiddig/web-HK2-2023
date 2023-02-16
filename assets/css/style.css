@@ -2613,7 +2613,7 @@ header .uk-dropdown {
 .btn-mobile::before {
   font-family: "Feather-Icons";
   font-size: 22px;
-  content: '\ea02';
+  /* content: '\ea02'; */
   line-height: 30px;
   top: 50%;
   left: 50%;
@@ -2636,7 +2636,7 @@ header .uk-dropdown {
 .btn-night-mode::before {
   font-family: "unicons";
   font-size: 22px;
-  content: '\ea99';
+  /* content: '\ea99'; */
   line-height: 30px;
   top: 50%;
   left: 50%;
@@ -2650,9 +2650,9 @@ header .uk-dropdown {
   background-color: #475167;
 }
 
-.dark .btn-night-mode ::before {
+/* .dark .btn-night-mode ::before {
   content: '\eae6';
-}
+} */
 
 /* ---------------------------------- */
 /*  market
