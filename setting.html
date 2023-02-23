@@ -632,36 +632,6 @@
                 comment.textContent = "Only your followers can comment on your post.";
             }
         });
-
-        //dialog when click 
-        // Get the save button
-        var saveButton = document.getElementById('save-button');
-
-        // Add an event listener to the save button
-        saveButton.addEventListener('click', function() {
-            // Create a dialog box element
-            var dialogBox = document.createElement('div');
-            dialogBox.classList.add('dialog-box');
-            dialogBox.textContent = 'Dialog box content goes here.';
-
-            // Create a button element for the dialog box
-            var okButton = document.createElement('button');
-            okButton.classList.add('button', 'bg-blue-700');
-            okButton.textContent = 'OK';
-            okButton.addEventListener('click', function() {
-                // Hide the dialog box when the OK button is clicked
-                dialogBox.style.display = 'none';
-            });
-
-            // Add the OK button to the dialog box
-            dialogBox.appendChild(okButton);
-
-            // Add the dialog box to the document body
-            document.body.appendChild(dialogBox);
-
-            // Show the dialog box
-            dialogBox.style.display = 'block';
-        });
     </script>
 
  <!-- Scripts
