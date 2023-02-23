@@ -416,17 +416,17 @@
 
                 <div class="grid mt-12 gap-8">
                     <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2 row">
-                        <div class="col-3 border-end">
+                        <div class="col-12 col-md-3 border-end" id="Tablist">
                             <ul class="nav nav-pills row py-4" id="Tab" role="tablist">
-                                <li class="nav-item py-2" role="presentation">
+                                <li class="nav-item py-2" role="presentation" id="tabLi">
                                   <button class="nav-link active" id="profileTab" data-bs-toggle="pill" href="#tab1">Profile setting</button>
                                 </li>
-                                <li class="nav-item py-2" role="presentation">
+                                <li class="nav-item py-2" role="presentation" id="tabLi">
                                   <button class="nav-link" id="privacyTab" data-bs-toggle="pill" href="#tab2">Privacy and security</button>
                                 </li>
                               </ul>
                         </div>
-                        <div class="col-9 border-start tab-content" id="myTabContent">
+                        <div class="col-12 col-md-9 border-start tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="tab1" aria-labelledby="profileTab">
                                 <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
                                     <div>
@@ -462,19 +462,19 @@
                                 </div> 
              
                                 <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                                    <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button>
-                                    <button type="button" class="button bg-blue-700"> Save </button>
+                                    <button class="p-2 px-4 rounded bg-gray-50 text-red-500" id="cancel-button"> Cancel </button>
+                                    <button type="button" class="button bg-blue-700" id="save-button"> Save </button>
                                 </div>
                             </div>
 
                             <div class="tab-pane fade p-3" id="tab2" aria-labelledby="privacyTab">
-                                <div class="space-y-3">
+                                <div>
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <h4> Who follow me ?</h4>
-                                            <div> Everyone can see who follow you</div>
+                                            <div class="fs-4 text fw-bold"> Who follow me ?</div>
+                                            <div class="follow">Only your followers can see who follows you.</div>
                                         </div>
-                                        <div class="switches-list -mt-8 is-large">
+                                        <div class="switches-list -mt-8 is-large switch-1">
                                             <div class="switch-container">
                                                 <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
                                             </div>
@@ -483,22 +483,10 @@
                                     <hr>
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <h4> Show my activities ?</h4>
-                                            <div> Everyone can see your activities</div>
+                                            <div class="fs-4 text fw-bold"> Show my activities ?</div>
+                                            <div class="activities"> Only your followers can see your activities.</div>
                                         </div>
-                                        <div class="switches-list -mt-8 is-large">
-                                            <div class="switch-container">
-                                                <label class="switch"><input type="checkbox" checked><span class="switch-button"></span> </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <h4> Search engines?</h4>
-                                            <div> Everyone can see your search history</div>
-                                        </div>
-                                        <div class="switches-list -mt-8 is-large">
+                                        <div class="switches-list -mt-8 is-large switch-2">
                                             <div class="switch-container">
                                                 <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
                                             </div>
@@ -507,10 +495,22 @@
                                     <hr>
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <h4> Allow Commenting?</h4>
-                                            <div> Everyone can comment on your post</div>
+                                            <div class="fs-4 text fw-bold"> Search engines?</div>
+                                            <div class="search"> Only your followers can see your search history.</div>
                                         </div>
-                                        <div class="switches-list -mt-8 is-large">
+                                        <div class="switches-list -mt-8 is-large switch-3">
+                                            <div class="switch-container">
+                                                <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="fs-4 text fw-bold"> Allow Commenting?</div>
+                                            <div class="comment"> Only your followers can comment on your post.</div>
+                                        </div>
+                                        <div class="switches-list -mt-8 is-large switch-4">
                                             <div class="switch-container">
                                                 <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
                                             </div>
@@ -531,7 +531,7 @@
 
 
     <script>
-        
+        //Dark mode
         (function (window, document, undefined) {
             'use strict';
             if (!('localStorage' in window)) return;
@@ -566,12 +566,102 @@
     
         })(window, document);
 
-        $(function () {
-            $('#Tab button').on('click', function (e) {
-                e.preventDefault()
-                $(this).tab('show')
-            })
-        })
+
+        //responsive
+        var myDiv = document.getElementById('myTabContent');
+        var listdiv = document.getElementById('Tablist');
+        var tab = document.getElementById('Tab');
+        var tablist = document.getElementById('tabLi');
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) { // 768 is the width of the md breakpoint
+                myDiv.classList.remove('border-start');
+                myDiv.classList.add('border-top');
+                listdiv.classList.remove('border-end');
+                listdiv.classList.add('border-bottom');
+                tab.classList.remove('row');
+                tablist.classList.add('px-3')
+            } else {
+                myDiv.classList.remove('border-top');
+                myDiv.classList.add('border-start');
+                listdiv.classList.remove('border-bottom');
+                listdiv.classList.add('border-end');
+                tab.classList.add('row');
+                tablist.classList.remove('px-3')
+            }
+        });
+
+        //switch element
+        // Get the switch element
+        var switch1 = document.querySelector('.switch-1 input[type="checkbox"]');
+        var switch2 = document.querySelector('.switch-2 input[type="checkbox"]');
+        var switch3 = document.querySelector('.switch-3 input[type="checkbox"]');
+        var switch4 = document.querySelector('.switch-4 input[type="checkbox"]');
+
+        // Get the text elements that need to be changed
+        var follow = document.querySelector('.flex .follow');
+        var activities = document.querySelector('.flex .activities');
+        var search = document.querySelector('.flex .search');
+        var comment = document.querySelector('.flex .comment');
+
+        // Add an event listener to the switch element
+        switch1.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                follow.textContent = "Everyone can see who follow you.";
+            } else {
+                follow.textContent = "Only your followers can see who follows you.";
+            }
+        });
+        switch2.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                activities.textContent = "Everyone can see your activities.";
+            } else {
+                activities.textContent = "Only your followers can see your activities.";
+            }
+        });
+        switch3.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                search.textContent = "Everyone can see your search history.";
+            } else {
+                search.textContent = "Only your followers can see your search history.";
+            }
+        });
+        switch4.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                comment.textContent = "Everyone can comment on your post.";
+            } else {
+                comment.textContent = "Only your followers can comment on your post.";
+            }
+        });
+
+        //dialog when click 
+        // Get the save button
+        var saveButton = document.getElementById('save-button');
+
+        // Add an event listener to the save button
+        saveButton.addEventListener('click', function() {
+            // Create a dialog box element
+            var dialogBox = document.createElement('div');
+            dialogBox.classList.add('dialog-box');
+            dialogBox.textContent = 'Dialog box content goes here.';
+
+            // Create a button element for the dialog box
+            var okButton = document.createElement('button');
+            okButton.classList.add('button', 'bg-blue-700');
+            okButton.textContent = 'OK';
+            okButton.addEventListener('click', function() {
+                // Hide the dialog box when the OK button is clicked
+                dialogBox.style.display = 'none';
+            });
+
+            // Add the OK button to the dialog box
+            dialogBox.appendChild(okButton);
+
+            // Add the dialog box to the document body
+            document.body.appendChild(dialogBox);
+
+            // Show the dialog box
+            dialogBox.style.display = 'block';
+        });
     </script>
 
  <!-- Scripts
@@ -597,4 +687,11 @@
 .nav-link{
     color: black;
 }
+
+/* @media (max-width: 470px) {
+  .border-md-top {
+    border-top: 1px solid #dee2e6;
+    border-left: none;
+  }
+} */
 </style>
