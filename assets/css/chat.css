@@ -1,0 +1,40 @@
+/* make scroll */
+.scrollbar {
+  background: #F5F5F5;
+  overflow-y: scroll;
+}
+/* split chatbox */
+.header-chatbox{
+  height: 10%;
+}
+.body-chatbox{
+  height: 80%
+}
+.footer-chatbox{
+  height: 10%;
+}
+
+/* split left-chatbox - bar */
+.search-left{
+  height: 7%;
+}
+
+.list-user{
+  height:93%;
+}
+
+#wrapper {
+  margin: auto;
+}
+/* css cute scrollbar */
+.scroll-style-1::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+} 
+.scroll-style-1::-webkit-scrollbar-thumb {
+  background-color: #107299;
+}
+.scroll-style-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
