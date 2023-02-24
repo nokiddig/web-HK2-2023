@@ -25,20 +25,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/chat.css">
-    <style>
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 950px !important;
-                padding-top: 30px !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 
-    <div id="wrapper">
+    <!-- <div id="wrapper"> -->
 
         <div class="sidebar">
             <div class="sidebar_header border-b border-gray-200 from-gray-100 to-gray-50 bg-gradient-to-t  uk-visible@s"> 
@@ -416,11 +408,11 @@
 
             <div class="container m-auto pt-5">
                 
-                <h1 class="font-semibold lg:mb-6 mb-3 text-2xl"> Messages</h1>
+                <h1 class="font-semibold lg:mb-6 text-2xl"> Messages</h1>
 
                 <div class="lg:flex lg:shadow lg:bg-white lg:space-y-0 space-y-8 rounded-md lg:-mx-0 -mx-5 overflow-hidden lg:dark:bg-gray-800">
                     <!-- left message-->
-                    <div class="lg:w-4/12 bg-white border-r overflow-hidden dark:bg-gray-800 dark:border-gray-600">
+                    <div class="left-message lg:w-4/12 bg-white border-r overflow-hidden dark:bg-gray-800 dark:border-gray-600">
 
                         <!-- search-->
                         <div class="border-b px-4 py-4 dark:border-gray-600 search-left">
@@ -431,7 +423,7 @@
                         </div>
 
                         <!-- user list-->
-                        <div class="pb-16 w-full scrollbar list-user scroll-style-1">
+                        <div class=" scrollbar list-user scroll-style-1">
                             <ul class="dark:text-gray-100">
                                 <li>
                                     <a href="#" class="block flex items-center py-3 px-4 space-x-3 hover:bg-gray-100 dark:hover:bg-gray-700">

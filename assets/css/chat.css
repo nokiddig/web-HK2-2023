@@ -1,8 +1,15 @@
+
+.main_content{
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 /* make scroll */
 .scrollbar {
   background: #F5F5F5;
   overflow-y: scroll;
 }
+
 /* split chatbox */
 .header-chatbox{
   height: 10%;
@@ -26,15 +33,29 @@
 #wrapper {
   margin: auto;
 }
+
 /* css cute scrollbar */
 .scroll-style-1::-webkit-scrollbar {
   width: 6px;
   background-color: #F5F5F5;
 } 
 .scroll-style-1::-webkit-scrollbar-thumb {
-  background-color: #107299;
+  background-color: rgba(37,99,235,0.5);
 }
 .scroll-style-1::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #F5F5F5;
+}
+
+/* responsive */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 950px !important;
+        padding-top: 30px !important;
+    }
+}
+@media (max-width: 1023px) {
+  .left-message{
+    display: none !important;
+  }
 }
