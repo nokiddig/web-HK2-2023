@@ -439,7 +439,7 @@
                                      </div>
                                      <div class="col-span-2">
                                          <label for="about">About me</label>  
-                                         <textarea id="about" name="about" rows="3"  class="shadow-none bg-gray-100"></textarea>
+                                         <textarea id="about" name="about" rows="3"  class="p-3 shadow-none bg-gray-100"></textarea>
                                      </div> 
                                      <div class="col-span-2">
                                          <label for=""> Location</label>
@@ -524,6 +524,23 @@
 
                 </div>
 
+            </div>
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                            <p class="modal-title fs-5 fw-bold">Confirm</p>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <p>Are you sure want to save?</p>
+                                <button type="button" class="btn btn-primary btn-success yes-button mx-4">YES</button>
+                                <button type="button" class="btn btn-primary btn-danger no-button mx-4">NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -632,6 +649,24 @@
                 comment.textContent = "Only your followers can comment on your post.";
             }
         });
+
+        //create dialog
+        var myBtn = document.getElementById("save-button");
+        var myModal = document.getElementById("myModal");
+        
+
+        myBtn.addEventListener("click", function() {
+            var modal = new bootstrap.Modal(myModal);
+            modal.show();
+
+            var noBtn = myModal.querySelector(".no-button");
+            noBtn.addEventListener("click", function() {
+                modal.hide();
+                console.log("test ok");
+            });
+        });
+
+        
     </script>
 
  <!-- Scripts
