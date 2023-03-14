@@ -5,7 +5,7 @@
 
 /* make scroll */
 .scrollbar {
-  /* background: #F5F5F5; */
+  height: 650px !important;
   overflow-y: scroll;
 }
 
