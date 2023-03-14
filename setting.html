@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
 
+    <!-- Bootstrap
+    ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -409,136 +413,142 @@
             <div class="container m-auto"> 
 
                 <h1 class="text-2xl leading-none text-gray-900 tracking-tight mt-3"> Account Setting </h1>
-                <ul class="mt-5 -mr-3 flex-nowrap lg:overflow-hidden overflow-x-scroll uk-tab">
-                    <li class="uk-active"><a href="#">General</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Notification</a></li>
-                    <li><a href="#">Social links</a></li>
-                    <li><a href="#">Billing</a></li>
-                    <li><a href="#">Security</a></li>
-                </ul>
 
-                <div class="grid lg:grid-cols-3 mt-12 gap-8">
-                    <div>
-                        <h3 class="text-xl mb-2"> Basic</h3>
-                        <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
-                    </div>
-                    <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2">
-    
-                       <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
-                           <div>
-                               <label for=""> First name</label>
-                               <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
-                           </div>
-                           <div>
-                               <label for=""> Last name</label>
-                               <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
+                <div class="grid mt-12 gap-8">
+                    <div class="bg-white rounded-md lg:shadow-lg shadow col-span-2 row">
+                        <div class="col-12 col-md-3 border-end" id="Tablist">
+                            <ul class="nav nav-pills row py-4" id="Tab" role="tablist">
+                                <li class="nav-item py-2" role="presentation" id="tabLi">
+                                  <button class="nav-link active" id="profileTab" data-bs-toggle="pill" href="#tab1">Profile setting</button>
+                                </li>
+                                <li class="nav-item py-2" role="presentation" id="tabLi">
+                                  <button class="nav-link" id="privacyTab" data-bs-toggle="pill" href="#tab2">Privacy and security</button>
+                                </li>
+                              </ul>
+                        </div>
+                        <div class="col-12 col-md-9 border-start tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="tab1" aria-labelledby="profileTab">
+                                <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
+                                    <div>
+                                        <label for=""> First name</label>
+                                        <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
+                                    </div>
+                                    <div>
+                                        <label for=""> Last name</label>
+                                        <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
+                                     </div>
+                                     <div class="col-span-2">
+                                         <label for="about">About me</label>  
+                                         <textarea id="about" name="about" rows="3"  class="p-3 shadow-none bg-gray-100"></textarea>
+                                     </div> 
+                                     <div class="col-span-2">
+                                         <label for=""> Location</label>
+                                         <input type="text" placeholder="" class="shadow-none bg-gray-100">
+                                     </div>
+                                     <div>
+                                        <label for=""> Working at</label>
+                                        <input type="text" placeholder="" class="shadow-none bg-gray-100">
+                                     </div> 
+                                     <div>
+                                        <label for=""> Relationship </label>
+                                        <select id="relationship" name="relationship"  class="shadow-none bg-gray-100">
+                                         <option value="0">None</option>
+                                         <option value="1">Single</option>
+                                         <option value="2">In a relationship</option>
+                                         <option value="3">Married</option>
+                                         <option value="4">Engaged</option>
+                                       </select>
+                                     </div>
+                                </div> 
+             
+                                <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
+                                    <button class="p-2 px-4 rounded bg-gray-50 text-red-500" id="cancel-button"> Cancel </button>
+                                    <button type="button" class="button bg-blue-700" id="save-button"> Save </button>
+                                </div>
                             </div>
-                            <div class="col-span-2">
-                                <label for=""> Email</label>
-                                <input type="text" placeholder="Your name.." class="shadow-none bg-gray-100">
-                            </div>
-                            <div class="col-span-2">
-                                <label for="about">About me</label>  
-                                <textarea id="about" name="about" rows="3"  class="shadow-none bg-gray-100"></textarea>
-                            </div> 
-                            <div class="col-span-2">
-                                <label for=""> Location</label>
-                                <input type="text" placeholder="" class="shadow-none bg-gray-100">
-                            </div>
-                            <div>
-                               <label for=""> Working at</label>
-                               <input type="text" placeholder="" class="shadow-none bg-gray-100">
-                            </div> 
-                            <div>
-                               <label for=""> Relationship </label>
-                               <select id="relationship" name="relationship"  class="shadow-none bg-gray-100">
-                                <option value="0">None</option>
-                                <option value="1">Single</option>
-                                <option value="2">In a relationship</option>
-                                <option value="3">Married</option>
-                                <option value="4">Engaged</option>
-                              </select>
-                            </div>
-                       </div> 
-    
-                       <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                           <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button>
-                           <button type="button" class="button bg-blue-700"> Save </button>
-                       </div>
-    
-                    </div>
 
-                    <div>
-                        <h3 class="text-xl mb-2"> Privacy</h3>
-                        <p> Lorem ipsum dolor sit amet nibh consectetuer adipiscing elit</p>
-                    </div>
-                    <div class="bg-white rounded-md lg:shadow-lg shadow lg:p-6 p-4 col-span-2">
-
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h4> Who can follow me ?</h4>
-                                <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </div>
-                            </div>
-                            <div class="switches-list -mt-8 is-large">
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                            <div class="tab-pane fade p-3" id="tab2" aria-labelledby="privacyTab">
+                                <div>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="fs-4 text fw-bold"> Who follow me ?</div>
+                                            <div class="follow">Only your followers can see who follows you.</div>
+                                        </div>
+                                        <div class="switches-list -mt-8 is-large switch-1">
+                                            <div class="switch-container">
+                                                <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="fs-4 text fw-bold"> Show my activities ?</div>
+                                            <div class="activities"> Only your followers can see your activities.</div>
+                                        </div>
+                                        <div class="switches-list -mt-8 is-large switch-2">
+                                            <div class="switch-container">
+                                                <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="fs-4 text fw-bold"> Search engines?</div>
+                                            <div class="search"> Only your followers can see your search history.</div>
+                                        </div>
+                                        <div class="switches-list -mt-8 is-large switch-3">
+                                            <div class="switch-container">
+                                                <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="fs-4 text fw-bold"> Allow Commenting?</div>
+                                            <div class="comment"> Only your followers can comment on your post.</div>
+                                        </div>
+                                        <div class="switches-list -mt-8 is-large switch-4">
+                                            <div class="switch-container">
+                                                <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h4> Show my activities ?</h4>
-                                <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </div>
-                            </div>
-                            <div class="switches-list -mt-8 is-large">
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox" checked><span class="switch-button"></span> </label>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h4> Search engines?</h4>
-                                <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </div>
-                            </div>
-                            <div class="switches-list -mt-8 is-large">
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <h4> Allow Commenting?</h4>
-                                <div> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, </div>
-                            </div>
-                            <div class="switches-list -mt-8 is-large">
-                                <div class="switch-container">
-                                    <label class="switch"><input type="checkbox"><span class="switch-button"></span> </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
     
                     </div>
 
                 </div>
 
             </div>
-            
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                            <p class="modal-title fs-5 fw-bold">Confirm</p>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <p>Are you sure want to save?</p>
+                                <button type="button" class="btn btn-primary btn-success yes-button mx-4">YES</button>
+                                <button type="button" class="btn btn-primary btn-danger no-button mx-4">NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
 
     <script>
-        
+        //Dark mode
         (function (window, document, undefined) {
             'use strict';
             if (!('localStorage' in window)) return;
@@ -572,6 +582,91 @@
             }, false);
     
         })(window, document);
+
+
+        //responsive
+        var myDiv = document.getElementById('myTabContent');
+        var listdiv = document.getElementById('Tablist');
+        var tab = document.getElementById('Tab');
+        var tablist = document.getElementById('tabLi');
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) { // 768 is the width of the md breakpoint
+                myDiv.classList.remove('border-start');
+                myDiv.classList.add('border-top');
+                listdiv.classList.remove('border-end');
+                listdiv.classList.add('border-bottom');
+                tab.classList.remove('row');
+                tablist.classList.add('px-3')
+            } else {
+                myDiv.classList.remove('border-top');
+                myDiv.classList.add('border-start');
+                listdiv.classList.remove('border-bottom');
+                listdiv.classList.add('border-end');
+                tab.classList.add('row');
+                tablist.classList.remove('px-3')
+            }
+        });
+
+        //switch element
+        // Get the switch element
+        var switch1 = document.querySelector('.switch-1 input[type="checkbox"]');
+        var switch2 = document.querySelector('.switch-2 input[type="checkbox"]');
+        var switch3 = document.querySelector('.switch-3 input[type="checkbox"]');
+        var switch4 = document.querySelector('.switch-4 input[type="checkbox"]');
+
+        // Get the text elements that need to be changed
+        var follow = document.querySelector('.flex .follow');
+        var activities = document.querySelector('.flex .activities');
+        var search = document.querySelector('.flex .search');
+        var comment = document.querySelector('.flex .comment');
+
+        // Add an event listener to the switch element
+        switch1.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                follow.textContent = "Everyone can see who follow you.";
+            } else {
+                follow.textContent = "Only your followers can see who follows you.";
+            }
+        });
+        switch2.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                activities.textContent = "Everyone can see your activities.";
+            } else {
+                activities.textContent = "Only your followers can see your activities.";
+            }
+        });
+        switch3.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                search.textContent = "Everyone can see your search history.";
+            } else {
+                search.textContent = "Only your followers can see your search history.";
+            }
+        });
+        switch4.addEventListener('change', function(event) {
+            if (event.target.checked) {
+                comment.textContent = "Everyone can comment on your post.";
+            } else {
+                comment.textContent = "Only your followers can comment on your post.";
+            }
+        });
+
+        //create dialog
+        var myBtn = document.getElementById("save-button");
+        var myModal = document.getElementById("myModal");
+        
+
+        myBtn.addEventListener("click", function() {
+            var modal = new bootstrap.Modal(myModal);
+            modal.show();
+
+            var noBtn = myModal.querySelector(".no-button");
+            noBtn.addEventListener("click", function() {
+                modal.hide();
+                console.log("test ok");
+            });
+        });
+
+        
     </script>
 
  <!-- Scripts
@@ -585,6 +680,23 @@
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/bda3bb47f4.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
+
+<style>
+.nav-link{
+    color: black;
+}
+
+/* @media (max-width: 470px) {
+  .border-md-top {
+    border-top: 1px solid #dee2e6;
+    border-left: none;
+  }
+} */
+</style>
