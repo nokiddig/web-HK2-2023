@@ -19,6 +19,7 @@
     <!-- icons
         ================================================== -->
     <link rel="stylesheet" href="assets/css/icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS 
         ================================================== -->
@@ -42,7 +43,7 @@
                 <!-- btn night mode -->
                 <a href="#" id="night-mode" class="btn-night-mode" data-tippy-placement="left" title="Switch to dark mode"><i style="font-size: 22px; padding-left: 9px; padding-top: 7px;" class="fa-regular fa-lightbulb"></i></a>
             </div>
-            <div class="border-b border-gray-20 flex justify-between items-center p-3 pl-5 relative uk-hidden@s">
+            <div class="border-b border-gray-20 flex justify-between items-center p-3 pl-5 relative uk-hidden@m">
                 <h3 class="text-xl"> Navigation </h3>
                 <span class="btn-mobile" uk-toggle="target: #wrapper ; cls: sidebar-active">
                     <i style="padding-top:5px; font-size: 22px;" class="fa-solid fa-xmark"></i>
@@ -171,68 +172,12 @@
                     </div>
                     <div class="right-side lg:pr-4">
                          <!-- upload -->
-                        <a href="#"
-                            class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white">
+                        <a href="#upload-modal" 
+                            class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white" uk-toggle>
                             <ion-icon name="add-circle" class="-mb-1
                              mr-1 opacity-90 text-xl uilus-circle"></ion-icon> Upload
                         </a>
-                         <!-- upload dropdown box -->
-                        <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
-    
-                            <!-- notivication header -->
-                            <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
-                                <h4>Upload Video</h4>
-                            </div>
-    
-                            <!-- notification contents -->
-                            <div class="flex justify-center flex-center text-center dark:text-gray-300">
-    
-                                <div class="flex flex-col choose-upload text-center">
-                                   
-                                    <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg dark:bg-gray-800 dark:border-gray-600">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
-                                            <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
-                                            <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
-                                        </svg>
-                                    </div>
 
-                                    <p class="my-3 leading-6"> Do you have a video wants to share us <br> please upload her ..
-                                    </p>
-                                    <div uk-form-custom>
-                                        <input type="file">
-                                        <a href="#" class="button soft-warning small"> Choose file</a>
-                                    </div>
-    
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
-                                        uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
-                                        Or Import Video </a>
-                                </div>
-    
-                                <div class="uk-flex uk-flex-column choose-upload" hidden>
-                                    <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
-                                            <path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <p class="my-3 leading-6"> Import videos from YouTube <br> Copy / Paste your video link here </p>
-                                    <form class="uk-grid-small" uk-grid>
-                                        <div class="uk-width-expand">
-                                            <input type="text" class="uk-input uk-form-small  bg-gray-200 dark:bg-gray-700" style="box-shadow:none" placeholder="Paste link">
-                                        </div>
-                                        <div class="uk-width-auto"> <button type="submit" class="button soft-warning -ml-2">
-                                                Import </button> </div>
-                                    </form>
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
-                                        uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
-                                        Or Upload Video </a>
-                                </div>
-    
-                            </div>
-                            <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm dark:border-gray-500 dark:text-gray-500">
-                                Your Video size Must be Maxmium 999MB
-                            </div>
-                        </div>
-                        
                          <!-- Notification -->
 
                         <a href="#" class="header-links-item">
@@ -466,13 +411,12 @@
                                 </div>
                               </div>
                             </div>
-    
-                            <div uk-lightbox>
-                                <a href="assets/images/post/img4.jpg">  
-                                    <img src="assets/images/post/img4.jpg" alt="">
+                            <!-- Chỗ sửa -->
+                            <div>
+                                <a href="#story-modal" uk-toggle>  
+                                    <img src="assets/images/post/img4.jpg" alt="" >
                                 </a>
                             </div>
-                            
     
                             <div class="py-3 px-4 space-y-3"> 
                                
@@ -534,13 +478,20 @@
                                     </div>
                                 </div>
 
-                                <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                                    <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
-                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                        <a href="#"> <i class="uil-image"></i></a>
-                                        <a href="#"> <i class="uil-video"></i></a>
+                                <div class="comment-item flex">
+                                    <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                        <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                        <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                            <a href="#"> <i class="uil-image"></i></a>
+                                            <a href="#"> <i class="uil-video"></i></a>
+                                            <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                        </div>
+                                    </div>
+                                    <div class="icon-item" >
+                                        <i class="send-icon fa-solid fa-paper-plane"></i>
                                     </div>
                                 </div>
+                                
     
                             </div>
     
@@ -594,16 +545,17 @@
                               </div>
                             </div>
     
-                            <div uk-lightbox>
+                            <div>
                                 <div class="grid grid-cols-2 gap-2 p-2">
-
-                                    <a href="assets/images/post/img9.jpg" class="col-span-2">  
+                                    <!-- Chỗ sửa -->
+                                    <a href="#story-modal__multi-imgs" class="col-span-2" uk-toggle>  
                                         <img src="assets/images/post/img9.jpg" alt="" class="rounded-md w-full lg:h-76 object-cover">
                                     </a>
-                                    <a href="assets/images/post/img10.jpg">  
+
+                                    <a href="#story-modal__multi-imgs" uk-toggle>  
                                         <img src="assets/images/post/img10.jpg" alt="" class="rounded-md w-full h-full">
                                     </a>
-                                    <a href="assets/images/post/img11.jpg" class="relative">  
+                                    <a href="#story-modal__multi-imgs" class="relative" uk-toggle>  
                                         <img src="assets/images/post/img11.jpg" alt="" class="rounded-md w-full h-full">
                                         <div class="absolute bg-gray-900 bg-opacity-30 flex justify-center items-center text-white rounded-md inset-0 text-2xl"> + 15 more </div>
                                     </a>
@@ -671,11 +623,17 @@
                                     </div>
                                 </div>
 
-                                <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                                    <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
-                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                        <a href="#"> <i class="uil-image"></i></a>
-                                        <a href="#"> <i class="uil-video"></i></a>
+                                <div class="comment-item flex">
+                                    <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                        <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                        <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                            <a href="#"> <i class="uil-image"></i></a>
+                                            <a href="#"> <i class="uil-video"></i></a>
+                                            <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                        </div>
+                                    </div>
+                                    <div class="icon-item" >
+                                        <i class="send-icon fa-solid fa-paper-plane"></i>
                                     </div>
                                 </div>
     
@@ -809,14 +767,19 @@
                                     </div>
                                 </div>
 
-                                <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                                    <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
-                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                        <a href="#"> <i class="uil-image"></i></a>
-                                        <a href="#"> <i class="uil-video"></i></a>
+                                <div class="comment-item flex">
+                                    <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                        <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                        <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                            <a href="#"> <i class="uil-image"></i></a>
+                                            <a href="#"> <i class="uil-video"></i></a>
+                                            <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                        </div>
+                                    </div>
+                                    <div class="icon-item" >
+                                        <i class="send-icon fa-solid fa-paper-plane"></i>
                                     </div>
                                 </div>
-    
                             </div>
     
                         </div>
@@ -940,13 +903,19 @@
                                   </div>
                               </div>
 
-                              <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                                  <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
-                                  <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                      <a href="#"> <i class="uil-image"></i></a>
-                                      <a href="#"> <i class="uil-video"></i></a>
-                                  </div>
-                              </div>
+                              <div class="comment-item flex">
+                                <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                    <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                        <a href="#"> <i class="uil-image"></i></a>
+                                        <a href="#"> <i class="uil-video"></i></a>
+                                        <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                    </div>
+                                </div>
+                                <div class="icon-item" >
+                                    <i class="send-icon fa-solid fa-paper-plane"></i>
+                                </div>
+                            </div>
   
                           </div>
   
@@ -1102,9 +1071,9 @@
             <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
 
                 <div class="story-modal-media">
-                    <img src="assets/images/post/img4.jpg" alt=""  class="inset-0 h-full w-full object-cover">
+                    <img src="assets/images/post/img4.jpg" alt=""  class="post-image inset-0 h-full w-full">
                 </div>
-                <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
+                    <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
                 
                     <!-- post header-->
                     <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
@@ -1170,11 +1139,17 @@
 
                     </div>
                     <div class="p-3 border-t dark:border-gray-600">
-                        <div class="bg-gray-200 dark:bg-gray-700 rounded-full rounded-md relative">
-                            <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-8 shadow-none">
-                            <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                <a href="#"> <i class="uil-image"></i></a>
-                                <a href="#"> <i class="uil-video"></i></a>
+                        <div class="comment-item flex">
+                            <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                    <a href="#"> <i class="uil-image"></i></a>
+                                    <a href="#"> <i class="uil-video"></i></a>
+                                    <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                </div>
+                            </div>
+                            <div class="icon-item icon-modal" >
+                                <i class="send-icon fa-solid fa-paper-plane"></i>
                             </div>
                         </div>
                     </div>
@@ -1184,10 +1159,209 @@
         </div>
     </div>
 
+    <div id="story-modal__multi-imgs" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog story-modal">
+            <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
 
+                <div class="story-modal-slider">
+                    <div class="content">
+                        <div class="images">
+                            <img src="assets/images/post/img9.jpg" alt=""  class="story-img">
+                            <img src="assets/images/post/img10.jpg" alt=""  class="story-img">
+                            <img src="assets/images/post/img11.jpg" alt=""  class="story-img">
+                        </div>
+                        <div onclick="side_slide(-1)" class="slide left">
+                            <span class="fas fa-angle-left"></span>
+                        </div>
+                        <div onclick="side_slide(1)" class="slide right">
+                            <span class="fas fa-angle-right"></span>
+                        </div>
+                        <div class="btn-sliders">
+                            <span onclick="btm_slide(1)"></span>
+                            <span onclick="btm_slide(2)"></span>
+                            <span onclick="btm_slide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-2 bg-white dark:bg-gray-900 dark:text-gray-100">
+                
+                    <!-- post header-->
+                    <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
+                        <div class="flex flex-1 items-center space-x-4">
+                            <a href="#">
+                                <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
+                                    <img src="assets/images/avatars/avatar-2.jpg"
+                                        class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                </div>
+                            </a>
+                            <span class="block text-lg font-semibold"> Johnson smith </span>
+                        </div>
+                        <a href="#"> 
+                            <i  class="icon-feather-more-horizontal text-2xl rounded-full p-2 transition -mr-1"></i>
+                        </a>
+                    </div>
+                    <div class="story-content p-4" data-simplebar>
+
+                        <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                        
+                        <div class="py-4 ">
+                            <div class="flex justify-around">
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex font-bold items-baseline"> <i style="font-size: 16px; margin-right: 5px;" class="fa-solid fa-thumbs-up"></i> </i> Like</div>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex font-bold items-baseline"> <i style="font-size: 16px; margin-right: 5px;" class="fa-solid fa-comment"></i> Comment</div>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex font-bold items-baseline"> <i style="font-size: 16px; margin-right: 5px;" class="fa-solid fa-share-nodes"></i> Share</div>
+                                </a>
+                            </div>
+                            <hr class="-mx-4 my-3">
+                            <div class="flex items-center space-x-3"> 
+                                <div class="flex items-center">
+                                    <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white">
+                                    <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                                    <img src="assets/images/avatars/avatar-2.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                                </div>
+                                <div>
+                                    Liked <strong> Johnson</strong> and <strong> 209 Others </strong>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="-mt-1 space-y-1">
+                        <div class="flex flex-1 items-center space-x-2">
+                            <img src="assets/images/avatars/avatar-2.jpg" class="rounded-full w-8 h-8">
+                            <div class="flex-1 p-2">
+                                consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            </div>
+                        </div>
+
+                        <div class="flex flex-1 items-center space-x-2">
+                            <img src="assets/images/avatars/avatar-4.jpg" class="rounded-full w-8 h-8">
+                            <div class="flex-1 p-2">
+                                consectetuer adipiscing elit
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    </div>
+                    <div class="p-3 border-t dark:border-gray-600">
+                        <div class="comment-item flex">
+                            <div class="input-item bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                <input type="text" placeholder="Add your Comment.." class="bg-transparent max-h-10 shadow-none">
+                                <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                    <a href="#"> <i class="uil-image"></i></a>
+                                    <a href="#"> <i class="uil-video"></i></a>
+                                    <i class="emoji-icon fa-solid fa-face-laugh"></i>
+                                </div>
+                            </div>
+                            <div class="icon-item icon-modal" >
+                                <i class="send-icon fa-solid fa-paper-plane"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    </div>
+
+    <!-- Upload modal -->
+    <div id="upload-modal" class="uk-modal-container" uk-modal>
+        <button class="uk-modal-close-default btn-close-upload type="button" uk-close></button>
+       
+        <div class="uk-modal-dialog story-modal">
+            <div class=" header-upload">
+                <div class="header-modal-share">
+    
+                </div>
+    
+                <div class="header-modal-title">
+                    <h1 class="header-modal-title-text">Create new post</h1>
+                </div>
+                
+                <div class="header-modal-share">
+                    <button class="header-modal-btn">Share</button>
+                </div>
+            </div>
+            <div class="story-modal-media upload-modal-media">
+                <div class="upload-wrapper">
+                    <img src="" class="upload-image inset-0 h-full w-full"  alt="">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <div class="fas fa-cloud-upload-alt"></div>
+                        </div>
+                        <div class="upload-text">No file chosen, yet!</div>
+                    </div>
+                    <div id="upload-cancel-btn"><i class="fas fa-times"></i></div>
+                    <div class="upload-file-name">File name here</div>
+                </div>
+                <input id="upload-default-btn" type="file" hidden/>
+                <button id="upload-custom-btn" onclick="defaultBtnActive()">Choose a file</button>
+            </div>
+            
+                <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100 upload-note-item">
+                    <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
+                        <div class="flex flex-1 items-center space-x-4">
+                            <a href="#">
+                                <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
+                                    <img src="assets/images/avatars/avatar-2.jpg"
+                                        class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                </div>
+                            </a>
+                            <span class="block text-lg font-semibold"> Johnson smith </span>
+                        </div>
+                        <a href="#"> 
+                            <i  class="icon-feather-more-horizontal text-2xl rounded-full p-2 transition -mr-1"></i>
+                        </a>
+                    </div>
+
+                    <div class="story-content p-4" data-simplebar>
+                        <form action="">
+                            <textarea name="" id="" cols="12" rows="20" placeholder="Write your comments..." class="txt-comments"></textarea>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </div>
 
     <script>
-        
+        const wrapper = document.querySelector('.upload-wrapper')
+        const fileName = document.querySelector('.upload-file-name')
+        const defaultBtn = document.querySelector('#upload-default-btn')
+        const cancelBtn = document.querySelector('#upload-cancel-btn')
+        const customBtn = document.querySelector('#upload-custom-btn')
+        const img = document.querySelector('.upload-image')
+        function defaultBtnActive() {
+            defaultBtn.click()
+        }
+
+        defaultBtn.addEventListener('change', function(){
+            const file = this.files[0]
+            if(file){
+                const reader = new FileReader();
+                reader.onload = function() {
+                const result = reader.result
+                img.src = result
+                wrapper.classList.add("active")
+            }
+            cancelBtn.addEventListener("click", function(){
+                img.src = ""
+            })
+            reader.readAsDataURL(file)
+            }
+            if(this.value){
+                let valueStore = this.value;
+                fileName.textContent = valueStore;
+            }
+        })
+    </script>
+
+    <script>
         (function (window, document, undefined) {
             'use strict';
             if (!('localStorage' in window)) return;
@@ -1223,6 +1397,9 @@
         })(window, document);
     </script>
 
+    <!-- Upload modal -->
+    
+
  <!-- Scripts
     ================================================== -->
     <script src="assets/js/tippy.all.min.js"></script>  
@@ -1234,6 +1411,48 @@
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/bda3bb47f4.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Slide show (fix)
+        var indexValue = 1;
+        showImg(indexValue);
+        function btm_slide(e){showImg(indexValue = e);}
+        function side_slide(e){showImg(indexValue += e);}
+        function showImg(e){
+            var i;
+            const img = document.querySelectorAll('.story-img');
+            const sliders = document.querySelectorAll('.btn-sliders span')
+            if (e > img.length){
+                    indexValue = indexValue = 1;
+                }
+                if (e < 1){
+                    indexValue = img.length;
+                }
+                for (i = 0; i < img.length; i++){
+                    img[i].style.display = "none";
+                }
+
+                for (i = 0; i < sliders.length; i++){
+                    sliders[i].style.background = "rgba(225, 225, 225, 0.2)";
+                }
+
+                img[indexValue-1].style.display = "block";
+                sliders[indexValue-1].style.background = "#fff";
+        }
+
+        // Fix sidebar
+        function toggle(){
+            var sidebar = document.querySelector('.sidebar');
+            if (sidebar.style.display === "block"){
+                sidebar.style.display = "none";
+            }
+        }
+    </script>
 </body>
+
+
+
+
+
 
 </html>
